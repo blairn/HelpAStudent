@@ -11,7 +11,6 @@ coffeescript
 iron:router
 ian:accounts-ui-bootstrap-3
 momentjs:moment
-accounts-facebook
 mdg:geolocation
 mrt:leaflet-0.6.4
 underscore
