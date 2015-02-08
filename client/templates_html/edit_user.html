@@ -1,0 +1,35 @@
+<template name='edit_user'>
+  {{#if currentUser}}
+    {{> quickForm collection="Meteor.users" doc=user id="updateUserForm" type="update" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"  }}
+    {{> jobs_posted}}
+    {{> jobs_taken}}
+  {{else}}
+    You must be logged in to edit your user profile
+  {{/if}}
+</template>
+
+<template name='jobs_posted'>
+  {{#if jobs}}
+    <div class="panel panel-primary">
+      <div class="panel-heading">Jobs Posted</div>
+      <div class="panel-body">
+        {{#each jobs}}
+          {{> job}}
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+</template>
+
+<template name='jobs_taken'>
+  {{#if jobs}}
+    <div class="panel panel-primary">
+      <div class="panel-heading">Jobs Taken</div>
+      <div class="panel-body">
+        {{#each jobs}} 
+          {{> job}}
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+</template>

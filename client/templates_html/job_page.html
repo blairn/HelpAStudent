@@ -1,3 +1,27 @@
 <template name='job_page'>
-  {{job_title}}tet
+  <div class='col-md-2'>
+    <i class="fa fa-{{icon}} fa-3x"></i>
+  </div>
+  <div class='col-md-8'>
+    <div class='job_title'><h1>{{job_title}}</h1></div>
+    <div class='job_reward'>${{job_reward}}</div>
+    <div class='job_description'><h3>{{job_description}}</h3></div>
+    {{#if taken_by}}
+      This job has been taken
+      {{#if taken_by_you}}
+        by you!
+      {{else}}
+        by someone else.
+      {{/if}}
+    {{else}}
+      {{#if currentUser}}
+        <button id='take_job' class='btn' value='take job!'>Take Job</button>
+      {{else}}
+        You need to be logged in to take this job
+      {{/if}}
+    {{/if}}
+    
+  </div>
+  
+  
 </template>

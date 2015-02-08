@@ -1,8 +1,5 @@
-Template.job_list.helpers ( 
-  jobs : -> Jobs.find({taken_by:{$exists:false}}, { sort: { name: 1 }}).fetch()
-)
-
-Template.job.helpers (
+Template.job_page.helpers(
+  taken_by_you: -> @taken_by == Meteor.user()._id
   icon : -> 
     switch @category
       when 'baby' then 'child'
@@ -18,4 +15,8 @@ Template.job.helpers (
       when 'cleaning' then 'cleaning'
       else 'other'
     
+)
+
+Template.job_page.events(
+  'click #take_job': -> Jobs.update(@_id, {$set: {taken_by: Meteor.userId()}})
 )
