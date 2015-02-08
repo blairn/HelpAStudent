@@ -108,7 +108,7 @@ Schemas.Job = new SimpleSchema(
   owner:
     type: String
     regEx: SimpleSchema.RegEx.Id
-    defaultValue: -> @userId
+    autoValue: -> @userId if @isInsert
     autoform:
       omit: true
 #      options: ->
