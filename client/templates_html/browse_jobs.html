@@ -1,0 +1,23 @@
+<template name='browse_jobs'>
+	<div class='col-md-2'></div>
+	<div class='col-md-8'>
+      <div class='row'>
+        {{> jobs}}
+      </div>
+    </div>
+  <div class='col-md-2'></div>
+</template>
+
+<template name='jobs'>
+	{{#each jobs}} {{> job }} {{/each}}
+</template>
+
+<template name='job'>
+  <div class='job col-md-6'>
+    <a href='job_page/{{_id}}'>
+      <div class='job_title'>{{job_title}}</div>
+      <div class='job_reward'>${{job_reward}}</div>
+    </a>
+    <div class='job_description'>{{job_description}}</div>
+  </div>
+</template>
