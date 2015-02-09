@@ -8,9 +8,13 @@
 </template>
 
 <template name='job_list'>
-  {{#each jobs}}
-    {{> job }}
-  {{/each}}
+  {{#if jobs != 0}}
+    {{#each jobs}}
+      {{> job }}
+    {{/each}}
+  {{else}}
+    There are no jobs at this time. Come back later.
+  {{/if}}
 </template>
 
 <template name='job'>
