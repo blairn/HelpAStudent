@@ -1,5 +1,3 @@
-AutoForm.setDefaultTemplate('bootstrap3-horizontal')
-
 Router.configure layoutTemplate: 'layout'
 
 Router.route '/', -> @render('home')

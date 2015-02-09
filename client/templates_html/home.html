@@ -7,7 +7,12 @@
 	<h3>Welcome to</h3>
     <h1>Help a Student Help You</h1>
 	<h4>Where we connect people with jobs that need doing to student who are happy to help</h4>
-    <a href='/browse_jobs'><h2>Browse Jobs</h2></a><a href='create_job'><h2>Create Jobs</h2></a>
+    <a href='/browse_jobs'><h2>Browse Jobs</h2></a>
+    {{#if currentUser}}
+      <a href='create_job'><h2>Create Jobs</h2></a>
+    {{else}}
+      To create a job you need to create and account or log in! - the button is in the menu at the top right.
+    {{/if}}
     <span class='message_to_judges'><h5>This prototype is intended for use on PC but the final version will be compatible will mobile devices - it will compile to an APK and IOS app and everything :)</h5></span>
     <span class='message_to_judges'><h5>Note, the system is fully reactive across browsers, so if one person takes a job or a new job is added, it will be updated on your screen without having to reload the page.</h5></span>
   </div>

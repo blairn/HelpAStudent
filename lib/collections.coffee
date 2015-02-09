@@ -111,10 +111,6 @@ Schemas.Job = new SimpleSchema(
     autoValue: -> @userId if @isInsert
     autoform:
       omit: true
-#      options: ->
-#        _.map Meteor.users.find().fetch(), (user)->
-#          label: user.emails[0].address
-#          value: user._id
 )
 
 Jobs.attachSchema Schemas.Job

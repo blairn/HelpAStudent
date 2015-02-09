@@ -1,5 +1,9 @@
 <template name='create_job'>
-  <div class=''>
-	{{> quickForm collection="Jobs" id="insert_jobs_form" type="insert" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}}
-  </div>
+  {{#if currentUser}}
+    <div class=''>
+      {{> quickForm collection="Jobs" id="insert_jobs_form" type="insert" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}}
+    </div>
+  {{else}}
+    You have to be logged in to create a job.
+  {{/if}}
 </template>
